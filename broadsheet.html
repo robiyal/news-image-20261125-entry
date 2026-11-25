@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World in One Day — Wednesday 25 November 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  .page { width: 2400px; height: 3200px; overflow: hidden; background: #F9F7F1; color: #141414;
+    font-family: Arial, Helvetica, sans-serif; padding: 22px 48px 12px 48px; }
+  .serif { font-family: Georgia, 'Times New Roman', serif; }
+  .red { color: #B91C1C; }
+  .rule { border-top: 3px solid #141414; }
+  .rule-thin { border-top: 1px solid #141414; }
+  .kicker-row { display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 30px; font-weight: 700; letter-spacing: 6px; padding-bottom: 10px; }
+  .kicker-row .right { font-size: 24px; letter-spacing: 3px; color: #555; font-weight: 400; }
+  h1.date { font-family: Georgia, 'Times New Roman', serif; font-size: 100px; line-height: 1.02;
+    font-weight: 700; text-align: center; padding: 10px 0 4px 0; letter-spacing: -1px; }
+  .countline { text-align: center; font-size: 34px; font-weight: 700; letter-spacing: 2px; padding: 8px 0 4px 0; }
+  .countline .dot { color: #B91C1C; }
+  .dateline { text-align: center; font-size: 24px; color: #444; padding-bottom: 12px; font-style: italic; }
+  .section-label { font-size: 24px; font-weight: 700; letter-spacing: 4px; margin: 8px 0 6px 0; }
+  .section-label .n { color: #B91C1C; }
+  /* numbers strip */
+  .numbers { display: flex; border-top: 3px solid #141414; border-bottom: 3px solid #141414; margin-top: 6px; }
+  .num { flex: 1; text-align: center; padding: 8px 6px 8px 6px; border-left: 1px solid #C9C2B4; }
+  .num:first-child { border-left: none; }
+  .num .v { font-family: Georgia, serif; font-size: 56px; font-weight: 700; line-height: 1; }
+  .num .l { font-size: 19px; color: #444; margin-top: 6px; line-height: 1.25; }
+  /* timeline */
+  .timeline { position: relative; margin: 6px 10px 0 10px; height: 104px; }
+  .timeline .line { position: absolute; left: 0; right: 0; top: 46px; height: 4px; background: #141414; }
+  .tl-item { position: absolute; top: 0; width: 260px; transform: translateX(-50%); text-align: center; }
+  .tl-item .t { font-size: 30px; font-weight: 700; color: #B91C1C; }
+  .tl-item .dot { width: 18px; height: 18px; background: #B91C1C; border-radius: 50%;
+    margin: 6px auto 6px auto; border: 3px solid #F9F7F1; outline: 2px solid #B91C1C; }
+  .tl-item .s { font-size: 19px; line-height: 1.2; color: #222; }
+  /* leads */
+  .leads { display: flex; gap: 26px; margin-top: 6px; }
+  .lead { flex: 1; border-top: 4px solid #141414; padding-top: 10px; }
+  .lead .illus { width: 100%; height: 185px; background: #12324F; margin-bottom: 10px; }
+  .lead .badge { display: inline-block; background: #B91C1C; color: #fff; font-size: 26px; font-weight: 700;
+    padding: 2px 14px; margin-right: 10px; }
+  .tags { font-size: 20px; font-weight: 700; letter-spacing: 2px; color: #555; }
+  .tags .cert { color: #B91C1C; }
+  .lead h2 { font-family: Georgia, serif; font-size: 40px; line-height: 1.06; margin: 6px 0 6px 0; }
+  .lead p { font-size: 22px; line-height: 1.32; color: #222; }
+  .lead .src { font-size: 19px; color: #666; margin-top: 8px; }
+  /* small cards */
+  .cards { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 4px; }
+  .card { width: calc((100% - 88px) / 5); border-top: 3px solid #141414; padding-top: 8px; }
+  .card .mini { width: 100%; height: 80px; margin-bottom: 8px; }
+  .card h3 { font-family: Georgia, serif; font-size: 25px; line-height: 1.1; margin: 5px 0 5px 0; }
+  .card p { font-size: 19px; line-height: 1.25; color: #222; }
+  .card .meta { font-size: 17px; color: #666; margin-top: 6px; letter-spacing: 1px; }
+  .card .meta b { color: #B91C1C; }
+  .badge-sm { display: inline-block; background: #141414; color: #fff; font-size: 20px; font-weight: 700; padding: 1px 10px; }
+  /* map */
+  .map-wrap { border-top: 3px solid #141414; margin-top: 4px; padding-top: 8px; }
+  .map-wrap svg { display: block; width: 100%; height: 360px; }
+  /* also on */
+  .also { display: flex; gap: 40px; margin-top: 2px; }
+  .also-col { flex: 1; }
+  .also-item { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid #D8D2C4; align-items: baseline; }
+  .also-item .no { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #B91C1C; min-width: 44px; }
+  .also-item .rdot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; transform: translateY(1px); }
+  .also-item .txt { font-size: 21px; line-height: 1.22; }
+  .also-item .txt b { font-family: Georgia, serif; }
+  .also-item .tm { margin-left: auto; font-size: 19px; color: #666; white-space: nowrap; padding-left: 12px; }
+  /* date check */
+  .datecheck { border: 5px solid #B91C1C; padding: 14px 22px 12px 22px; margin-top: 12px; background: #FDF3F3; }
+  .datecheck h2 { font-size: 30px; letter-spacing: 3px; color: #B91C1C; margin-bottom: 6px; }
+  .datecheck p { font-size: 21px; line-height: 1.35; }
+  .datecheck .cols { display: flex; gap: 30px; margin-top: 6px; }
+  .datecheck .cols div { flex: 1; font-size: 20px; line-height: 1.4; }
+  /* footer */
+  .footer { margin-top: 8px; border-top: 3px solid #141414; padding-top: 6px; font-size: 19px; line-height: 1.4; color: #333; }
+  .footer .legend b { color: #B91C1C; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="kicker-row"><span class="red">THE WORLD IN ONE DAY</span><span class="right">ONE DAY OF WORLD NEWS &middot; ONE PICTURE &middot; ALL TIMES UTC</span></div>
+  <div class="rule"></div>
+  <h1 class="date">Wednesday 25 November 2026</h1>
+  <div class="countline">27 STORIES <span class="dot">&middot;</span> 8 REGIONS <span class="dot">&middot;</span> EVERY ONE FROM THIS WEDNESDAY</div>
+  <div class="dateline">Every story below happened or was first reported on Wednesday 25 November 2026 &mdash; in UTC, or in the time zone where it happened. Nothing from yesterday made the grid.</div>
+
+  <!-- THE DAY IN NUMBERS -->
+  <div class="section-label">THE DAY IN NUMBERS</div>
+  <div class="numbers">
+    <div class="num"><div class="v">40%</div><div class="l">Hormuz oil traffic fall as tanker attacks rise</div></div>
+    <div class="num"><div class="v">$743M</div><div class="l">Naver&rsquo;s logistics investment by 2030</div></div>
+    <div class="num"><div class="v">135</div><div class="l">Pages in Amnesty&rsquo;s Gaza women report</div></div>
+    <div class="num"><div class="v">72</div><div class="l">Orangutans rescued from Kalimantan wildfires</div></div>
+    <div class="num"><div class="v">$120M</div><div class="l">Cubs&rsquo; six-year deal for slugger Sato</div></div>
+    <div class="num"><div class="v">5.86%</div><div class="l">Nvidia&rsquo;s fall as Monday&rsquo;s rally fades</div></div>
+  </div>
+
+  <!-- THE DAY SO FAR IN UTC -->
+  <div class="section-label">THE DAY SO FAR IN UTC <span class="n">&mdash; FIRST TWO HOURS</span></div>
+  <div class="timeline">
+    <div class="line"></div>
+    <div class="tl-item" style="left:15%"><div class="t">00:18</div><div class="dot"></div><div class="s">Shenzhou-24 launches</div></div>
+    <div class="tl-item" style="left:31%"><div class="t">00:37</div><div class="dot"></div><div class="s">Seoul Metro strike averted</div></div>
+    <div class="tl-item" style="left:50%"><div class="t">~01:00</div><div class="dot"></div><div class="s">Amnesty publishes Gaza report</div></div>
+    <div class="tl-item" style="left:89%"><div class="t">01:47</div><div class="dot"></div><div class="s">Nvidia falls 5.86%</div></div>
+  </div>
+
+  <!-- TOP 3 LEADS -->
+  <div class="section-label">THE TOP THREE</div>
+  <div class="leads">
+    <div class="lead">
+      <svg class="illus" viewBox="0 0 700 208" preserveAspectRatio="none">
+        <rect width="700" height="208" fill="#0B1F3A"/>
+        <circle cx="80" cy="40" r="3" fill="#fff"/><circle cx="150" cy="24" r="2" fill="#fff"/><circle cx="230" cy="52" r="3" fill="#fff"/><circle cx="480" cy="30" r="2" fill="#fff"/><circle cx="560" cy="56" r="3" fill="#fff"/><circle cx="640" cy="26" r="2" fill="#fff"/><circle cx="60" cy="120" r="2" fill="#fff"/><circle cx="660" cy="130" r="2" fill="#fff"/>
+        <path d="M350 34 L372 74 L372 150 L328 150 L328 74 Z" fill="#FFFFFF"/>
+        <path d="M350 34 L372 74 L328 74 Z" fill="#B91C1C"/>
+        <circle cx="350" cy="100" r="12" fill="#7FB8E0"/>
+        <path d="M328 130 L300 168 L328 158 Z" fill="#E07A5F"/>
+        <path d="M372 130 L400 168 L372 158 Z" fill="#E07A5F"/>
+        <path d="M338 150 L350 196 L362 150 Z" fill="#F5C542"/>
+        <rect x="40" y="176" width="620" height="4" fill="#1E4A6B"/>
+        <text x="36" y="48" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">SHENZHOU-24</text>
+        <text x="36" y="82" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">JIUQUAN &middot; 00:18 UTC</text>
+        <text x="470" y="48" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">FIRST FOREIGN</text>
+        <text x="470" y="74" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">ASTRONAUT ABOARD</text>
+        <text x="470" y="100" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">TIANGONG</text>
+      </svg>
+      <span class="badge">1</span><span class="tags">SCIENCE &middot; <span class="cert">CONFIRMED</span></span>
+      <h2>Shenzhou-24 launches first foreign astronaut</h2>
+      <p>Shenzhou-24 lifted off at 00:18 UTC carrying Pakistani Muhammad Zeeshan Ali, the first foreign visitor to China&rsquo;s Tiangong space station. Docking follows in about three and a half hours.</p>
+      <div class="src">Source: Reuters &middot; 00:18 UTC</div>
+    </div>
+    <div class="lead">
+      <svg class="illus" viewBox="0 0 700 208" preserveAspectRatio="none">
+        <rect width="700" height="208" fill="#3A1F1F"/>
+        <rect x="80" y="28" width="150" height="150" fill="#F9F7F1"/>
+        <rect x="80" y="28" width="150" height="26" fill="#B91C1C"/>
+        <text x="94" y="47" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#fff">AMNESTY</text>
+        <rect x="96" y="68" width="118" height="7" fill="#141414"/>
+        <rect x="96" y="84" width="118" height="7" fill="#8A8378"/>
+        <rect x="96" y="100" width="118" height="7" fill="#8A8378"/>
+        <rect x="96" y="116" width="80" height="7" fill="#8A8378"/>
+        <circle cx="280" cy="100" r="34" fill="#B91C1C"/>
+        <text x="280" y="94" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">135</text>
+        <text x="280" y="116" font-family="Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle">PAGES</text>
+        <text x="360" y="60" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">GAZA&rsquo;S WOMEN</text>
+        <text x="360" y="96" font-family="Arial, sans-serif" font-size="20" fill="#E8C9C9">228 INTERVIEWS &middot; BIRTHS</text>
+        <text x="360" y="122" font-family="Arial, sans-serif" font-size="20" fill="#E8C9C9">PREVENTED, REPORT SAYS</text>
+        <text x="360" y="160" font-family="Arial, sans-serif" font-size="20" fill="#E8C9C9">PUBLISHED 25 NOVEMBER</text>
+      </svg>
+      <span class="badge">2</span><span class="tags">MIDDLE EAST &middot; <span class="cert">OFFICIAL</span></span>
+      <h2>Amnesty: Gaza war preventing births</h2>
+      <p>Amnesty International&rsquo;s 135-page report, published today, says Israeli measures in Gaza have prevented births and stripped women of reproductive healthcare, based on 228 interviews.</p>
+      <div class="src">Source: Amnesty International &middot; ~01:00 UTC</div>
+    </div>
+    <div class="lead">
+      <svg class="illus" viewBox="0 0 700 208" preserveAspectRatio="none">
+        <rect width="700" height="208" fill="#12324F"/>
+        <rect x="70" y="40" width="220" height="128" fill="#F9F7F1"/>
+        <rect x="70" y="40" width="220" height="30" fill="#141414"/>
+        <text x="84" y="61" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#fff">SECURITY PACT</text>
+        <rect x="86" y="84" width="188" height="7" fill="#141414"/>
+        <rect x="86" y="100" width="188" height="7" fill="#8A8378"/>
+        <rect x="86" y="116" width="140" height="7" fill="#8A8378"/>
+        <circle cx="330" cy="110" r="40" fill="#B91C1C"/>
+        <text x="330" y="102" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">AU&ndash;SB</text>
+        <text x="330" y="126" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">SIGNED</text>
+        <text x="380" y="60" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">CANBERRA&rsquo;S</text>
+        <text x="380" y="102" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">PACT</text>
+        <text x="380" y="140" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">CHINA&rsquo;S 2022 DEAL OUT</text>
+        <text x="380" y="166" font-family="Arial, sans-serif" font-size="20" fill="#BFD6E4">DEFENCE PARTNER OF CHOICE</text>
+      </svg>
+      <span class="badge">3</span><span class="tags">ASIA-PACIFIC &middot; <span class="cert">CONFIRMED</span></span>
+      <h2>Australia signs Solomon Islands security pact</h2>
+      <p>Australia signed a security pact making Canberra the Solomons&rsquo; defence partner of choice, displacing China&rsquo;s 2022 deal. The treaty was signed in Honiara on Wednesday morning.</p>
+      <div class="src">Source: Reuters &middot; ~00:30 UTC</div>
+    </div>
+  </div>
+
+  <!-- STORIES 4-13 -->
+  <div class="section-label">MORE OF THE DAY <span class="n">&mdash; 4 TO 13</span></div>
+  <div class="cards">
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#1E4A6B"/><path d="M50 66 L110 66 L110 50 L170 50 L170 66 L230 66 L230 40 L290 40 L290 66 L350 66" stroke="#F5C542" stroke-width="5" fill="none"/><circle cx="140" cy="30" r="10" fill="#E07A5F"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">4</text></svg>
+      <span class="badge-sm">4</span> <span class="tags">MIDDLE EAST &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Hormuz oil traffic fell 40 percent</h3>
+      <p>Hormuz oil traffic fell 40 percent as Iran stepped up tanker attacks, with three ships catching fire on mines.</p>
+      <div class="meta">02:30 AST &middot; Al Jazeera</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#3A1F1F"/><rect x="60" y="20" width="8" height="52" fill="#F5C542"/><rect x="60" y="20" width="120" height="8" fill="#F5C542"/><rect x="150" y="28" width="6" height="30" fill="#F5C542"/><rect x="145" y="58" width="16" height="12" fill="#E07A5F"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">5</text></svg>
+      <span class="badge-sm">5</span> <span class="tags">MIDDLE EAST &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Coalition orders Hodeidah port evacuation</h3>
+      <p>The Saudi-led coalition ordered civilians to evacuate Yemen&rsquo;s Hodeidah Port, then Saba reported an attack there.</p>
+      <div class="meta">01:39 AST &middot; Al Jazeera / Saba</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#2E1F3A"/><rect x="60" y="18" width="90" height="56" fill="#B91C1C"/><circle cx="105" cy="46" r="14" fill="#fff"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">6</text></svg>
+      <span class="badge-sm">6</span> <span class="tags">ASIA-PACIFIC &middot; <span class="cert">REPORTED</span></span>
+      <h3>North Korea threatens Swiss office closure</h3>
+      <p>Kim Yo Jong said Pyongyang may close Switzerland&rsquo;s diplomatic office over sanctions on North Korean camps.</p>
+      <div class="meta">02:00 KST &middot; KCNA</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#1F3A2E"/><rect x="60" y="26" width="14" height="40" fill="#F5C542"/><rect x="90" y="26" width="14" height="40" fill="#F5C542"/><rect x="180" y="26" width="60" height="40" fill="#7FB069"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">7</text></svg>
+      <span class="badge-sm">7</span> <span class="tags">S. AMERICA &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>US pauses military operations with Ecuador</h3>
+      <p>Washington paused joint military operations with Ecuador while investigating a lethal Ecuadorean forces operation.</p>
+      <div class="meta">25 Nov &middot; Reuters / NYT</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#12324F"/><path d="M50 25 L110 25 L110 45 L170 45 L170 70 L230 70" stroke="#E07A5F" stroke-width="6" fill="none"/><path d="M230 70 L290 70 L290 30 L350 30" stroke="#F5C542" stroke-width="6" fill="none"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">8</text></svg>
+      <span class="badge-sm">8</span> <span class="tags">MARKETS &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Nvidia falls 5.86% as rally fades</h3>
+      <p>Nvidia fell 5.86% to $155.38 on Tuesday as Monday&rsquo;s 31% rebound faded; the Nasdaq dropped 1.48%.</p>
+      <div class="meta">01:47 UTC &middot; Reuters</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#1F3A2E"/><circle cx="105" cy="46" r="28" fill="#fff"/><path d="M85 30 Q105 46 85 62 M125 30 Q105 46 125 62" stroke="#B91C1C" stroke-width="4" fill="none"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">9</text></svg>
+      <span class="badge-sm">9</span> <span class="tags">SPORT &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Cubs land Japanese slugger Sato</h3>
+      <p>The Chicago Cubs agreed a six-year, $120 million deal with Japanese slugger Teruaki Sato, ESPN reported.</p>
+      <div class="meta">00:38 UTC &middot; ESPN</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#12324F"/><rect x="50" y="25" width="180" height="42" rx="10" fill="#7FB069"/><circle cx="82" cy="67" r="11" fill="#141414"/><circle cx="118" cy="67" r="11" fill="#141414"/><circle cx="192" cy="67" r="11" fill="#141414"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">10</text></svg>
+      <span class="badge-sm">10</span> <span class="tags">ASIA-PACIFIC &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Seoul Metro deal averts strike</h3>
+      <p>Seoul Metro labour and management reached a last-minute wage deal Wednesday, avoiding a planned general strike.</p>
+      <div class="meta">00:37 UTC &middot; Korea Times</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#2E1F3A"/><rect x="50" y="22" width="200" height="10" fill="#E07A5F"/><rect x="50" y="34" width="200" height="10" fill="#F5C542"/><rect x="50" y="46" width="200" height="10" fill="#7FB069"/><rect x="50" y="58" width="200" height="10" fill="#7FB8E0"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">11</text></svg>
+      <span class="badge-sm">11</span> <span class="tags">ASIA-PACIFIC &middot; <span class="cert">OFFICIAL</span></span>
+      <h3>Australia apologises to LGBTQ+ veterans</h3>
+      <p>Defence Minister Richard Marles apologised to LGBTQ+ veterans in parliament, in a historic treaty-signing day.</p>
+      <div class="meta">00:43 UTC &middot; Guardian</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#12324F"/><rect x="60" y="45" width="70" height="27" fill="#F5C542"/><rect x="80" y="20" width="70" height="27" fill="#BFD6E4"/><rect x="180" y="45" width="70" height="27" fill="#7FB069"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">12</text></svg>
+      <span class="badge-sm">12</span> <span class="tags">TECH &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>Naver invests $743 million in logistics</h3>
+      <p>Naver will invest nearly 1 trillion won ($743.7 million) in logistics infrastructure by 2030 amid Coupang rivalry.</p>
+      <div class="meta">00:32 UTC &middot; Korea Times</div>
+    </div>
+    <div class="card">
+      <svg class="mini" viewBox="0 0 440 92" preserveAspectRatio="none"><rect width="440" height="92" fill="#1F3A2E"/><rect x="70" y="18" width="14" height="56" fill="#F5C542" transform="rotate(20 77 46)"/><circle cx="220" cy="46" r="22" fill="#fff"/><circle cx="220" cy="46" r="22" fill="none" stroke="#B91C1C" stroke-width="3"/><text x="380" y="56" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#fff">13</text></svg>
+      <span class="badge-sm">13</span> <span class="tags">SPORT &middot; <span class="cert">CONFIRMED</span></span>
+      <h3>England level T20 series in Australia</h3>
+      <p>England beat Australia by eight wickets in the second T20, chasing 185 to level the five-match series.</p>
+      <div class="meta">08:00 AEDT &middot; press</div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="section-label">WHERE IT HAPPENED <span class="n">&mdash; STORIES 1&ndash;13 PINNED</span></div>
+  <div class="map-wrap">
+  <svg viewBox="0 0 1200 430">
+    <rect width="1200" height="430" fill="#DCE8F0"/>
+    <g fill="#E8DCC8" stroke="#B9A98A" stroke-width="1.5">
+      <polygon points="40,60 83,45 150,48 183,43 217,53 267,53 300,50 327,57 347,67 367,76 383,72 400,91 417,103 383,110 367,115 350,122 333,139 330,153 317,146 300,165 283,170 267,174 250,167 233,160 217,146 200,134 183,120 183,98 150,76 100,72 50,72"/>
+      <polygon points="417,72 450,72 467,62 500,53 517,48 483,38 433,33 407,38 400,48"/>
+      <polygon points="333,191 350,189 367,186 393,191 417,201 433,215 450,222 473,227 483,236 467,251 450,272 433,287 417,299 400,306 383,313 367,334 357,344 367,323 360,299 350,275 333,251 330,227 333,210"/>
+      <polygon points="567,129 570,112 593,100 583,96 600,93 610,88 627,79 633,74 617,72 640,69 660,50 683,45 700,48 733,53 750,57 733,72 717,84 700,96 693,108 700,115 683,120 677,129 667,122 650,110 633,110 627,122 610,124 593,127"/>
+      <polygon points="567,131 583,131 600,129 633,127 640,134 667,139 700,141 707,141 717,148 723,163 733,179 743,186 760,189 770,186 753,203 740,215 733,227 727,239 717,258 710,277 693,294 667,299 653,287 643,263 640,239 633,220 627,205 600,201 573,203 557,196 543,186 547,167 550,151"/>
+      <polygon points="700,115 717,108 733,100 750,96 767,91 783,84 800,76 817,72 833,67 850,60 867,53 900,48 933,43 967,38 1000,41 1033,43 1067,43 1100,48 1133,50 1167,57 1193,60 1167,72 1140,81 1127,91 1100,108 1073,120 1060,131 1050,136 1033,141 1023,134 1007,124 1000,139 983,155 967,167 960,186 950,196 933,201 923,191 917,179 907,167 900,163 883,167 867,179 857,196 850,186 840,167 827,160 817,155 800,155 790,153 783,148 773,148 767,143 760,143 750,139 740,131 727,124 717,120 700,120"/>
+      <polygon points="917,203 933,215 950,227 967,232 983,234 1000,239 1017,234 1033,222 1050,220 1067,225 1060,234 1033,227 1000,229 967,232"/>
+      <polygon points="977,268 980,287 983,299 1000,296 1017,291 1033,291 1050,299 1067,306 1083,306 1100,303 1110,291 1110,280 1100,268 1087,260 1073,251 1073,241 1057,244 1050,251 1040,244 1033,246 1020,248 1007,256 993,263"/>
+      <polygon points="1033,141 1040,136 1050,134 1060,131 1067,129 1070,122 1073,115 1080,110 1070,108 1067,120 1063,127 1057,131 1043,134"/>
+      <polygon points="583,96 590,88 583,81 590,76 597,79 600,88 603,93"/>
+    </g>
+    <g font-family="Arial, sans-serif" font-size="17" letter-spacing="2" fill="#5A6B7A">
+      <text x="60" y="210">NORTH AMERICA</text>
+      <text x="380" y="300">SOUTH AMERICA</text>
+      <text x="560" y="60">EUROPE</text>
+      <text x="620" y="230">AFRICA</text>
+      <text x="880" y="120">ASIA</text>
+      <text x="980" y="345">AUSTRALIA</text>
+    </g>
+    <g font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+      <circle cx="980" cy="140" r="11" fill="#B91C1C"/><text x="980" y="145" fill="#fff">1</text>
+      <circle cx="690" cy="150" r="11" fill="#B91C1C"/><text x="690" y="155" fill="#fff">2</text>
+      <circle cx="1152" cy="252" r="11" fill="#B91C1C"/><text x="1152" y="257" fill="#fff">3</text>
+      <circle cx="730" cy="165" r="11" fill="#B91C1C"/><text x="730" y="170" fill="#fff">4</text>
+      <circle cx="700" cy="195" r="11" fill="#B91C1C"/><text x="700" y="200" fill="#fff">5</text>
+      <circle cx="1000" cy="105" r="11" fill="#B91C1C"/><text x="1000" y="110" fill="#fff">6</text>
+      <circle cx="310" cy="260" r="11" fill="#B91C1C"/><text x="310" y="265" fill="#fff">7</text>
+      <circle cx="150" cy="130" r="11" fill="#B91C1C"/><text x="150" y="135" fill="#fff">8</text>
+      <circle cx="260" cy="115" r="11" fill="#B91C1C"/><text x="260" y="120" fill="#fff">9</text>
+      <circle cx="1035" cy="125" r="11" fill="#B91C1C"/><text x="1035" y="130" fill="#fff">10</text>
+      <circle cx="1065" cy="305" r="11" fill="#B91C1C"/><text x="1065" y="310" fill="#fff">11</text>
+      <circle cx="1055" cy="150" r="11" fill="#B91C1C"/><text x="1055" y="155" fill="#fff">12</text>
+      <circle cx="1125" cy="298" r="11" fill="#B91C1C"/><text x="1125" y="303" fill="#fff">13</text>
+    </g>
+  </svg>
+  </div>
+
+  <!-- ALSO ON -->
+  <div class="section-label">ALSO ON WEDNESDAY 25 NOVEMBER <span class="n">&mdash; 14 TO 27</span></div>
+  <div class="also">
+    <div class="also-col">
+      <div class="also-item"><span class="no">14</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Ex-council boss gets $150,000 severance.</b> Former Tauranga head Marty Grenfell got $130,792 plus $21,526 in legal fees. <i>REPORTED</i></span><span class="tm">00:41</span></div>
+      <div class="also-item"><span class="no">15</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>72 orangutans rescued from Kalimantan wildfires.</b> Conservation teams saved 72 orangutans since August 2026. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">16</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Indonesia seeks UK trade agreement.</b> Jakarta pushes for a comprehensive bilateral deal to widen market access. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">17</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Philippines budgets &#8369;35.2 billion for diplomacy.</b> 2027 budget to maintain and refurbish embassies and consulates. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">18</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Singapore studies ICJ Myanmar genocide ruling.</b> Singapore said it respects the ruling that Myanmar committed genocide. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">19</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Bangkok rail fare registration opens December.</b> Common ticketing sign-up via the Paotang app starts 15 December. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">20</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Vietnam eyes farm ties with Australia.</b> Hanoi explores agricultural cooperation with Western Australia. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+    </div>
+    <div class="also-col">
+      <div class="also-item"><span class="no">21</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Laos moves to protect children in court.</b> Calls for stronger protection of children in criminal cases. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">22</span><span class="rdot" style="background:#8E6FB8"></span><span class="txt"><b>Yangon raises El Ni&ntilde;o risk awareness.</b> Village programmes warn of the potential effects of El Ni&ntilde;o. <i>REPORTED</i></span><span class="tm">25 Nov</span></div>
+      <div class="also-item"><span class="no">23</span><span class="rdot" style="background:#E07A5F"></span><span class="txt"><b>US warns citizens across Middle East.</b> State Department urges heightened vigilance amid Iran-backed threats. <i>CONFIRMED</i></span><span class="tm">02:00</span></div>
+      <div class="also-item"><span class="no">24</span><span class="rdot" style="background:#E07A5F"></span><span class="txt"><b>Coalition downs two drones over Saudi.</b> Two drones intercepted and destroyed in Saudi Arabia&rsquo;s Eastern province. <i>CONFIRMED</i></span><span class="tm">01:48</span></div>
+      <div class="also-item"><span class="no">25</span><span class="rdot" style="background:#E07A5F"></span><span class="txt"><b>Qatar urges calm between US, Iran.</b> Doha calls on Washington and Tehran to keep negotiating. <i>REPORTED</i></span><span class="tm">02:17</span></div>
+      <div class="also-item"><span class="no">26</span><span class="rdot" style="background:#E07A5F"></span><span class="txt"><b>Gaza surgeons face dire supply shortages.</b> Blockade limits vital medical supplies, doctors told Al Jazeera. <i>REPORTED</i></span><span class="tm">01:15</span></div>
+      <div class="also-item"><span class="no">27</span><span class="rdot" style="background:#1E4A6B"></span><span class="txt"><b>Rutgers routs Sacred Heart 106-73.</b> Jamichael Davis tied a career high with 21 points on Tuesday night. <i>CONFIRMED</i></span><span class="tm">25 Nov</span></div>
+    </div>
+  </div>
+
+  <!-- DATE CHECK -->
+  <div class="datecheck">
+    <h2>DATE CHECK &mdash; WHAT WE LEFT OUT</h2>
+    <p><b>Rule:</b> every story on this page happened or was first reported on <b>Wednesday 25 November 2026</b> &mdash; in UTC, or in the time zone where it happened. The stories below were checked and <b>deliberately left out</b> because they belong to an earlier day:</p>
+    <div class="cols">
+      <div>Hamas security chief killed &mdash; <b>Tue 24 Nov</b> (same strike as yesterday&rsquo;s lead)<br>CIA/ODNI hack hits unclassified systems &mdash; <b>Tue 24 Nov</b> (CNN: no classified data hit)<br>US tariffs on 16 partners &ldquo;poised&rdquo; &mdash; first reported <b>Tue 24 Nov</b><br>Huawei guilty of trade theft &mdash; verdict <b>Tue 24 Nov</b><br>UN: 47,000 women killed by partners &mdash; published <b>Tue 24 Nov</b></div>
+      <div>COP31 ends without a deal &mdash; <b>Sun 22 Nov</b><br>Denmark &ldquo;ghetto&rdquo; evictions upheld &mdash; <b>Mon 23 Nov</b><br>Gaza death toll 74,746 &mdash; <b>Tue 24 Nov</b><br>Mexico kingpin captured &mdash; <b>Fri 20 Nov</b><br>FIFA awards 2031/2035 Women&rsquo;s World Cups &mdash; <b>Mon 23 Nov</b><br><b>Press time 02:00 UTC:</b> no fresh Europe or Africa story had broken yet. <b>Not yet:</b> US GDP + PCE (13:30 UTC) &middot; Hera Dimorphos images (18:45 UTC)</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="legend"><b>Certainty:</b> OFFICIAL = official statement &middot; CONFIRMED = 2+ outlets &middot; REPORTED = one source &middot; CLAIM = one party&rsquo;s claim, unverified. Every story here happened or was first reported on Wednesday 25 November 2026, in UTC or in local time where it happened.</div>
+    <div>Sources: Reuters, Amnesty International, Al Jazeera, Korea Times, ESPN, Bernama, RNZ, Guardian, official government statements. Full source list in the story ledger. Original drawings &mdash; all scenes are flat vector illustrations, not photographs.</div>
+  </div>
+
+</div>
+</body>
+</html>
