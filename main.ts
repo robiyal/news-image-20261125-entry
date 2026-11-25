@@ -1,5 +1,5 @@
-// News-image 25 Nov 2026 entry — Node 22, standard library only.
-// entry.png sits beside this file: a 768x1024 PNG, 201,591 bytes, inside
+// News-image 25 Nov 2026 entry, V2 revision — Node 22, standard library only.
+// entry.png sits beside this file: a 768x1024 PNG, 614,971 bytes, inside
 // the gate (at most 1 MiB, at most 1024 by 1024 pixels). This program checks
 // the file is a whole, in-gate PNG and copies it to /output/entry.png.
 // Outside the grader, MAKEFUN_OUTPUT_DIR stands in for /output:
