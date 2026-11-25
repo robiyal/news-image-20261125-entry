@@ -1,41 +1,49 @@
-// News-image 25 Nov 2026 entry (Node 22, standard library only).
-// The image is entry.png beside this file (768x1024 PNG, 201,591 bytes —
-// inside the gate: at most 1 MiB, at most 1024 by 1024 pixels). The program
-// validates the file first (PNG magic, IHDR dimensions, size cap), then
-// copies it to /output/entry.png, creating the output directory itself.
-// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
+// News-image 25 Nov 2026 entry — Node 22, standard library only.
+// entry.png sits beside this file: a 768x1024 PNG, 201,591 bytes, inside
+// the gate (at most 1 MiB, at most 1024 by 1024 pixels). This program checks
+// the file is a whole, in-gate PNG and copies it to /output/entry.png.
+// Outside the grader, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { copyFileSync, mkdirSync, readFileSync, statSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const ENTRY = new URL('./entry.png', import.meta.url);
+const IMAGE = new URL('./entry.png', import.meta.url);
 const OUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-const MAX_BYTES = 1048576;
-const MAX_SIDE = 1024;
+const BYTE_CAP = 1048576;
+const SIDE_CAP = 1024;
 
-const bytes = readFileSync(ENTRY);
-if (statSync(ENTRY).size > MAX_BYTES) {
-  throw new Error(`entry.png is ${statSync(ENTRY).size} bytes, over the 1 MiB gate`);
+function fail(message) {
+  throw new Error(`entry.png rejected: ${message}`);
 }
-// PNG magic: 89 50 4E 47 0D 0A 1A 0A
-const MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-if (!bytes.subarray(0, 8).equals(MAGIC)) throw new Error('entry.png is not a PNG');
-const width = bytes.readUInt32BE(16);
-const height = bytes.readUInt32BE(20);
-if (width > MAX_SIDE || height > MAX_SIDE) {
-  throw new Error(`entry.png is ${width}x${height}, over the 1024x1024 gate`);
+
+function validate(bytes) {
+  if (bytes.length > BYTE_CAP) {
+    fail(`is ${bytes.length} bytes, over the 1 MiB cap`);
+  }
+  // PNG signature: 89 50 4E 47 0D 0A 1A 0A
+  const signature = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
+  if (!signature.every((byte, i) => bytes[i] === byte)) {
+    fail('does not start with the PNG signature');
+  }
+  const width = bytes.readUInt32BE(16);
+  const height = bytes.readUInt32BE(20);
+  if (width > SIDE_CAP || height > SIDE_CAP) {
+    fail(`is ${width}x${height}, over the 1024x1024 cap`);
+  }
+  // A whole PNG ends with the IEND chunk: 00 00 00 00 49 45 4E 44 AE 42 60 82.
+  const tail = [0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82];
+  if (!tail.every((byte, i) => bytes[bytes.length - 12 + i] === byte)) {
+    fail('is truncated: no IEND chunk at the end');
+  }
+  return { width, height };
 }
-// Whole-image check: the file must end with a valid IEND chunk
-// (12 trailing bytes: 00 00 00 00 49 45 4E 44 AE 42 60 82).
-const IEND = Buffer.from([
-  0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
-]);
-if (!bytes.subarray(bytes.length - 12).equals(IEND)) {
-  throw new Error('entry.png is truncated: no IEND chunk at the end');
-}
+
+const bytes = readFileSync(IMAGE);
+const { width, height } = validate(bytes);
 console.log(`entry.png OK: ${width}x${height}, ${bytes.length} bytes`);
 
 mkdirSync(OUT_DIR, { recursive: true });
-copyFileSync(ENTRY, join(OUT_DIR, 'entry.png'));
-console.log(`wrote ${join(OUT_DIR, 'entry.png')}`);
+const destination = join(OUT_DIR, 'entry.png');
+copyFileSync(IMAGE, destination);
+console.log(`wrote ${destination}`);
