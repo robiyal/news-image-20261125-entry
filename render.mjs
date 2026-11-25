@@ -1,9 +1,9 @@
 // Render broadsheet.html to a 2400x3200 PNG with Playwright + Chromium.
 //   node render.mjs [output-path]
-// Defaults to entry-raw.png beside this file. The browser is the cached
-// Chromium 1148 build (the Playwright 1.65.1 package lives in
-// ~/workspace/playwright-automation/); the VM's egress proxy blocks live
-// navigation, but local file pages render fine.
+// The output defaults to entry-raw.png next to this file. Playwright 1.65.1
+// lives in ~/workspace/playwright-automation/ and the cached Chromium 1148
+// build is used directly: the VM's egress proxy blocks Chromium's network,
+// but a local file:// page renders fine, which is all this needs.
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
